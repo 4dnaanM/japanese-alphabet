@@ -11,7 +11,7 @@ english = [
     "ma", "mi", "mu", "me", "mo",
     "ya", "yu", "yo",
     "ra", "ri", "ru", "re", "ro",
-    "wa", "wo", "n",
+    "wa", "o", "n",
     "ga", "gi", "gu", "ge", "go",
     "za", "ji", "zu", "ze", "zo",
     "da", "ji", "zu", "de", "do",
