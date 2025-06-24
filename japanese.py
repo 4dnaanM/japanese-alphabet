@@ -2,6 +2,8 @@ import random as rand
 from tqdm import tqdm
 
 import argparse
+import os
+import time
 parser = argparse.ArgumentParser(description="Practice")
 parser.add_argument("--charset", dest="charset", help="Hiragana or Katakana")
 parser.add_argument("--fro", dest="fro", type=str, help="Start romaji (e.g., ka)")
@@ -58,9 +60,11 @@ def practice(kara: str, made: str, charset: str):
                     print("Try again")
             else: 
                 print(f"{alphabet[idx]} = {romaji[idx]}")
+                time.sleep(1)
 
-            print(wrongdict)
-        print()
+            # print(wrongdict)
+        os.system('cls' if os.name == 'nt' else 'clear')
+        # print()
 
     print(f"Wrong: {total-correct}, Accuracy: {(correct/total):.2f}")
     if(len(wrongdict)>0):
@@ -95,9 +99,11 @@ def practice_endless(kara: str, made: str, charset: str):
                         print("Try again")
                 else: 
                     print(f"{alphabet[idx]} = {romaji[idx]}")
+                    time.sleep(1)
+
+            os.system('cls' if os.name == 'nt' else 'clear')
 
             print(f"Accuracy: {((tot - wrong) / tot):.2f}")
-            print()
 
 if (__name__ == "__main__"):
     
@@ -110,4 +116,5 @@ if (__name__ == "__main__"):
         if args.endless:
             practice_endless("a", "po",args.charset)
         else:
+            # default: all katakana
             practice("a", "po",args.charset)
